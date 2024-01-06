@@ -32,7 +32,7 @@ A case study that identifies that popularities of a song per genre using regress
 
 
 ## Authors
-Lim, Aurelius Justin
-Meneses, Alyssa Ysabelle
-Umpad, Sean Henrick
-Yongco, Denzel Bryan
+Lim, Aurelius Justin\
+Meneses, Alyssa Ysabelle\
+Umpad, Sean Henrick\
+Yongco, Denzel Bryan\
