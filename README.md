@@ -1,41 +1,38 @@
 ## Spotify song popularity predictor case study
 
-A case study that identifies that popularities of a song per genre using regression models such as `linear regresion`, `logistic regression`, and `neural networks`. It uses the spotify music dataset that is composed of 17,996 songs and has the following attributes. The hyperparameters were tuned by using grid search, thus increasing the performance of said models.
+A case study that identifies that popularities of a song per genre using regression models such as `linear regresion`, `logistic regression`, and `neural networks`. It uses the spotify music dataset that is composed of 17,996 songs and has the following attributes. The hyperparameters were tuned by using grid search, thus increasing the performance of said models. 
 
-## Track Features
+## Getting started
+1. Clone the repository or download the zip
+2. Launch `Jupyter Lab`
+3. Navigate to the project folder that contains `STINTSY MCO.ipynb`
+4. Open the notebook, `STINTSY MCO.ipynb`
+5. Explore the dataset to see the results and analysis
 
-`Artist Name` – name of artist
+## Dataset Features
+| Feature            | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Artist Name        | Name of artist                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Track Name         | Name of song                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Popularity         | a value between 0 and 100, with 100 being the most popular. The popularity<br>is calculated by an algorithm and is based, in the most part, on the total number of plays<br>the track has had and how recent those plays are.                                                                                                                                                                                                                                                                                          |
+| danceability       | describes how suitable a track is for dancing based on a combination of<br>musical elements including tempo, rhythm stability, beat strength, and overall regularity.<br>A value of 0.0 is least danceable and 1.0 is most danceable.                                                                                                                                                                                                                                                                                  |
+| energy             | a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and<br>activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal<br>has high energy, while a Bach prelude scores low on the scale. Perceptual features<br>contributing to this attribute include dynamic range, perceived loudness, timbre, onset<br>rate, and general entropy.                                                                                                                            |
+| key                | The key the track is in. Integers map to pitches using standard Pitch Class notation.<br>If no key was detected, the value is -1.                                                                                                                                                                                                                                                                                                                                                                                      |
+| loudness           | The overall loudness of a track in decibels (dB). Loudness values are averaged<br>across the entire track and are useful for comparing relative loudness of tracks. Loudness<br>is the quality of a sound that is the primary psychological correlate of physical strength<br>(amplitude). Values typically range between -60 and 0 db.                                                                                                                                                                                |
+| mode               | indicates the modality (major or minor) of a track, the type of scale from which its<br>melodic content is derived. Major is represented by 1 and minor is 0.                                                                                                                                                                                                                                                                                                                                                          |
+| speechiness        | detects the presence of spoken words in a track. The more exclusively<br>speech-like the recording (e.g., talk show, audio book, poetry), the closer to 1.0 the<br>attribute value. Values above 0.66 describe tracks that are probably made entirely of<br>spoken words. Values between 0.33 and 0.66 describe tracks that may contain both<br>music and speech, either in sections or layered, including such cases as rap music.<br>Values below 0.33 most likely represent music and other non-speech-like tracks. |
+| acousticness       | A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0<br>represents high confidence the track is acoustic.                                                                                                                                                                                                                                                                                                                                                                                        |
+| instrumentalness   | Predicts whether a track contains no vocals. "Ooh" and "aah" sounds<br>are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal".<br>The closer the instrumentalness value is to 1.0, the greater likelihood the track contains<br>no vocal content. Values above 0.5 are intended to represent instrumental tracks, but<br>confidence is higher as the value approaches 1.0.                                                                                                         |
+| liveness           | Detects the presence of an audience in the recording. Higher liveness values<br>represent an increased probability that the track was performed live. A value above 0.8<br>provides strong likelihood that the track is live.                                                                                                                                                                                                                                                                                          |
+| valence            | A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a<br>track. Tracks with high valence sound more positive (e.g., happy, cheerful, euphoric),<br>while tracks with low valence sound more negative (e.g., sad, depressed, angry).                                                                                                                                                                                                                                                              |
+| tempo              | The overall estimated tempo of a track in beats per minute (BPM). In musical<br>terminology, tempo is the speed or pace of a given piece and derives directly from the<br>average beat duration.                                                                                                                                                                                                                                                                                                                       |
+| duration_in min/ms | Duration in ms.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| time_signature     | An estimated time signature. The time signature (meter) is a notational<br>convention to specify how many beats are in each bar (or measure). The time signature<br>ranges from 3 to 7 indicating time signatures of “3/4”, to “7/4”.                                                                                                                                                                                                                                                                                  |
+| Class              | corresponds to the genre of the track.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
-`Track Name` – name of song
 
-`Popularity` - value ranging from 0 to 100, with 100 being the most popular. It is determined by an algorithm and it takes into account the total plays and recentness.
-
-`danceability` – determines a song's dance suitability by taking into account a number of musical elements, such as tempo, beat intensity, rhythm stability, and overall regularity. A score of 0.0 indicates low danceability, while 1.0 signifies high danceability.
-
-`energy` – value ranging from 0.0 to 1.0 and represents a perceptual measure of intensity and
-activity. Energetic tracks, characterized by speed, loudness, and noise, tend to score high. Perceptual features contributing to this assessment include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
-
-`key` – indicates the track's key. Standard Pitch Class notation is used to convert numbers to pitches. If there is no key, the value is set to -1.
-
-`loudness` – value in decibels (dB) representing a track's overall loudness. Usually, values fall between -60 and 0 dB.
-
-`mode` – represented as  either 1 for major or 0 for minor, which refers to the scale from which melodic content it originates.
-
-`speechiness` – measures the amount of spoken words in a track, where values below 0.33 more likely indicates non-speech-like tracks, values between 0.33 and 0.66 suggests tracks may include both music and speech, and values between 0.66 and 0.33 indicate recordings primarily composed of spoken content.
-
-`acousticness` – value ranging from 0.0 to 1.0 of whether the track is acoustic. Higher values
-indicate higher confidence that it is acoustic.
-
-`instrumentalness` – value ranging from 0.0 to 1.0 which predicts whether or not a track includes vocals, considering the "ooh" and "aah" noises as instrumental. Values above 0.5 suggest increasing confidence in the absence of voice elements, while values closer to 1.0 imply a larger possibility that the track is instrumental.
-
-`liveness` – detects the presence of an audience in a recording wherein larger values suggest a higher chance of a live performance.
-
-`valence` – value ranging from 0.0 to 1.0 represents the degree of the music's positivity, where higher values denote a more upbeat and joyful tone and lower values, a more sad and serious mood.
-
-`tempo` – refers to the overall estimated speed or pace of a track, which is expressed in beats per minute (BPM), that is derived directly from the average beat duration.
-
-`duration_in min/ms` – duration in ms
-
-`time_signature` – value ranging from 3 to 7, indicating the estimated time signature. A notational convention used to identify the number of beats in each bar or measure.
-
-`Class` – genre of the track
+## Authors
+Lim, Aurelius Justin
+Meneses, Alyssa Ysabelle
+Umpad, Sean Henrick
+Yongco, Denzel Bryan
