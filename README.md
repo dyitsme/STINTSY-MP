@@ -35,4 +35,4 @@ A case study that identifies that popularities of a song per genre using regress
 Lim, Aurelius Justin\
 Meneses, Alyssa Ysabelle\
 Umpad, Sean Henrick\
-Yongco, Denzel Bryan\
+Yongco, Denzel Bryan
