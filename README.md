@@ -1,6 +1,6 @@
 ## Spotify song popularity predictor case study
 
-A case study that identifies that popularities of a song per genre using regression models such as linear regresion, logistic regression, and neural networks. It uses the spotify music dataset that is composed of 17,996 songs and has the following attributes. The hyperparameters were tuned by using grid search, thus increasing the performance of said models.
+A case study that identifies that popularities of a song per genre using regression models such as `linear regresion`, `logistic regression`, and `neural networks`. It uses the spotify music dataset that is composed of 17,996 songs and has the following attributes. The hyperparameters were tuned by using grid search, thus increasing the performance of said models.
 
 ## Track Features
 
